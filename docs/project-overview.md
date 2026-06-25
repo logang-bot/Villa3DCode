@@ -54,9 +54,11 @@ Assets/_Project/
 ### Phase 1 — Navigation (Current)
 - [x] Player movement script (CharacterController + new Input System)
 - [x] First hub scene with floor plane and capsule placeholder character
-- [ ] Follow camera (Cinemachine)
-- [ ] Interactable points of interest (trigger zones)
-- [ ] Scene transition system
+- [x] Follow camera (Cinemachine — orbital, mouse-controlled)
+- [x] Interactable points of interest (trigger zones + E prompt)
+- [x] Scene transition system (fade to black, DontDestroyOnLoad)
+- [ ] Replace capsule with actual character model
+- [ ] Multiple hub zones (expand beyond Hub_Zone01)
 
 ### Phase 2 — World & Story
 - [ ] Multiple hub zones
