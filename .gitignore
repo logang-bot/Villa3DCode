@@ -1,0 +1,38 @@
+# Unity generated
+/Library/
+/Temp/
+/Obj/
+/Build/
+/Builds/
+/Logs/
+/UserSettings/
+/MemoryCaptures/
+/Recordings/
+
+# Unity asset meta files (keep these)
+!/Assets/**/*.meta
+
+# VS / Rider
+/.vs/
+/.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+*.app
