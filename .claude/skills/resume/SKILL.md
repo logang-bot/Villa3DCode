@@ -2,7 +2,7 @@
 description: Session startup briefing — reads all project docs and summarizes current state, what's built, and the next task.
 ---
 
-Read all four files in the docs/ directory: project-overview.md, workflow.md, systems.md, and scene-setup.md.
+Read all files in the docs/ directory: project-overview.md, roadmap.md, and every file under features/.
 
 Then give a structured session briefing in this exact format:
 
