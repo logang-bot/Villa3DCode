@@ -10,28 +10,27 @@ Each step is marked:
 ---
 
 ## Currently Playable (as of this writing)
-Walk up to **`NPC_Witness`** in `Hub_Zone01` (open plaza pavement, southwest of spawn) and press E. They mention seeing a stranger near the cathedral; asking follow-up questions grants the clue `witness_saw_stranger`, visible in the debug list in the top-left corner. Talking to them again shows a different opening line, proving the clue was remembered. Reloading the scene (via the test zone) doesn't lose the clue.
+The real Act 1 loop is playable start to finish. At the start, only the **Client** is visible (position (0,1,-11)) — everything else is hidden until the case is accepted.
 
-This is a mechanical proof-of-concept, not yet reskinned into the actual mission content below — `NPC_Witness` isn't tied to any of the real characters or story clues yet.
+Talk to the **Client**: he explains his fiancée is suspected of infidelity and asks for proof. Choosing "Accept the case" sets `act1_case_accepted` and immediately activates the rest of Act 1's content — no scene reload needed.
+
+Once accepted: **`NPC_Informant`** ("Renata," at (-8,1,-10)) gives real leads pointing toward the fiancée and her lover (grants `lead_informant_tip`, optional flavor). **`Watcher_Fiancee`** (8,1,-10) and **`Watcher_Lover`** (16,1,-10) each have a facing vision cone and an Unaware/Suspicious/Alert state machine; standing unseen in their respective `SneakObservationPoint` (crouch with Left Ctrl to slow detection) grants `evidence_fiancee_seen` / `evidence_lover_seen`. **`CombatEncounterTrigger_Thief`** (-8,1,-15) starts a turn-based fight against a placeholder "Thief" in a separate `Battle` scene — incidental danger, grants no evidence.
+
+Once **both** evidence clues are gathered, returning to the Client offers "Report your findings" — selecting it grants `act1_complete` and the Client's dialogue changes to a closing line on any future visit.
 
 ---
 
 ## Act 1 — The Case
 
-1. 🔜 **Receive the case.** An NPC ("the Client") is placed in the plaza. Talking to him opens a dialogue explaining the job: he suspects his fiancée of infidelity and wants proof. Accepting starts Act 1.
-   🧩 Needs: item 4 (Act 1 wiring) on top of item 1 (dialogue foundation, done).
+1. ✅ **Receive the case.** `NPC_Client` in the plaza (0,1,-11) — the only thing active at game start. Talking to him explains the job; accepting sets `act1_case_accepted` and live-activates the rest of Act 1's content, no reload.
 
-2. 🔜 **Gather leads.** Talk to NPCs around the plaza (witnesses, staff, passersby) for clues pointing toward the fiancée's and the suspected lover's whereabouts/routine. Reuses the dialogue + clue system exactly as `NPC_Witness` demonstrates today.
-   🧩 Needs: item 4, content only (more NPCs authored against the existing system) — no new mechanics.
+2. ✅ **Gather leads.** `NPC_Informant` ("Renata") gives real leads once `act1_case_accepted` is set (a brush-off before), granting the optional flavor clue `lead_informant_tip`.
 
-3. 🔜 **Sneak for proof.** Locate the fiancée and the lover in the world and observe them without being noticed to gather direct evidence — this is the one genuinely new mechanic this act needs.
-   🧩 Needs: item 2 (sneak/observation mechanic) — not started.
+3. ✅ **Sneak for proof.** `Watcher_Fiancee`/`SneakObservationPoint_Fiancee` and `Watcher_Lover`/`SneakObservationPoint_Lover` — both gated behind `act1_case_accepted`, each granting its own clue (`evidence_fiancee_seen`/`evidence_lover_seen`).
 
-4. 🔜 **Survive the streets.** While moving through the city between leads, the player is occasionally ambushed by thieves/robbers, triggering a small turn-based fight.
-   🧩 Needs: item 3 (combat system core) — not started.
+4. ✅ **Survive the streets.** `CombatEncounterTrigger_Thief`, also gated behind `act1_case_accepted`. Grants no evidence — incidental danger, parallel to the sneak clues, not chained to them.
 
-5. 🔜 **Report back.** Once enough evidence is collected (exact threshold TBD when this is built — e.g. 3 pieces), return to the Client and hand it over. This closes Act 1 and should set a flag (e.g. `has_clue("act1_complete")`) gating Act 2.
-   🧩 Needs: item 4, using the clue system already in place to gate the hand-off dialogue.
+5. ✅ **Report back.** Once both `evidence_fiancee_seen` and `evidence_lover_seen` are present, the Client's "Report your findings" option appears; selecting it grants `act1_complete`, closing Act 1.
 
 ---
 
@@ -56,8 +55,8 @@ This is a mechanical proof-of-concept, not yet reskinned into the actual mission
 10. 🔜 **Track him down.** The player follows the trail to the Client's final location, discovering along the way that he's a serial murderer.
     🧩 Needs: item 6, content + scene wiring (may reuse existing `Hub_Zone01` spaces or need a small new one — TBD when this is built).
 
-11. 🔜 **The final confrontation.** Finding the Client triggers the boss fight — same combat system as the minor encounters (item 3), but with unique stats/stakes befitting a final boss.
-    🧩 Needs: item 6 + item 3.
+11. ✅ **The final confrontation (mechanic done, content pending).** The boss fight reuses the same combat system as the minor encounters (item 3, done) — a boss is just a new `EnemyDefinition` asset with higher stats, no new code.
+    🧩 Needs: item 6, to author the Client's boss stats and wire the encounter trigger at the confrontation.
 
 12. 🔜 **Resolution.** Winning the fight ends the mission. No epilogue/ending screen designed yet — worth a small pass once the fight itself works (main menu/UI work is separate, see `roadmap.md`).
     🧩 Needs: item 6.
@@ -68,9 +67,9 @@ This is a mechanical proof-of-concept, not yet reskinned into the actual mission
 | Mission build-order item (`mission-design.md`) | Unlocks story steps |
 |---|---|
 | 1. Dialogue + clue tracking foundation — **done** | Steps 1, 2, 5, 6, 9, 10 (all dialogue-driven) |
-| 2. Sneak/observation mechanic | Step 3 |
-| 3. Combat system core | Steps 4, 11 |
-| 4. Act 1 wiring | Steps 1–5, assembled into one playable act |
+| 2. Sneak/observation mechanic — **done** | Step 3 |
+| 3. Combat system core — **done** | Steps 4, 11 |
+| 4. Act 1 wiring — **done** | Steps 1–5, assembled into one playable act — see `features/mission-state.md` |
 | 5. Event sequencer + Act 2 reveal | Steps 6–8 |
 | 6. Act 3 — the hunt and final battle | Steps 9–12 |
 

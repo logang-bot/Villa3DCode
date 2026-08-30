@@ -1,0 +1,31 @@
+title: Client_Start
+---
+<<if has_clue("act1_complete")>>
+    Client: The matter is settled. Thank you again for your discretion.
+<<elseif has_clue("evidence_fiancee_seen") && has_clue("evidence_lover_seen")>>
+    Client: You have news?
+    -> Report your findings
+        Client: Show me.
+        Client: ...I see. So it's true.
+        Client: This is more than I hoped to have confirmed. You've done well, detective.
+        <<add_clue "act1_complete">>
+    -> Not yet, I need a moment
+        Client: Take the time you need. This isn't easy to hear.
+<<elseif has_clue("act1_case_accepted")>>
+    Client: Any word yet? I need to know for certain.
+    -> Ask what he expects
+        Client: Proof. Where she goes, who she sees. I'll trust your eyes over rumor.
+    -> Leave
+        Client: Go on, then.
+<<else>>
+    Client: Detective. Thank you for coming.
+    Client: I need to know if my fiancée is faithful to me. I've heard whispers, seen things I can't explain away.
+    -> Ask what he wants
+        Client: Proof, one way or another. Follow her, follow the man they say she meets. I don't care how you get it, only that it's true.
+    -> Accept the case
+        Client: Then we have an understanding. Discretion above all, detective.
+        <<add_clue "act1_case_accepted">>
+    -> Not yet
+        Client: Take your time. I'll be here.
+<<endif>>
+===

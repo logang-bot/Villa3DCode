@@ -63,6 +63,9 @@ Assets/_Project/
   - `features/interaction-system.md`
   - `features/hub-environment.md`
   - `features/dialogue-system.md`
+  - `features/sneak-observation.md`
+  - `features/combat-system.md`
+  - `features/mission-state.md`
 
 ---
 

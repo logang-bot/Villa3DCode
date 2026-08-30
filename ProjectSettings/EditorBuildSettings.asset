@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Hub/Hub_Zone01.unity
     guid: cd0575afcdf5acf4bb797cdf02c14b84
+  - enabled: 1
+    path: Assets/_Project/Scenes/Battle/Battle.unity
+    guid: ae151d94502cba14aabfc84bba0a1a8c
   m_configObjects: {}

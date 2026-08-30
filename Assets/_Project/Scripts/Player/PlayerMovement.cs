@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     Transform cam;
     Vector3 velocity;
     InputAction moveAction;
+    PlayerConcealment concealment;
 
     void Awake()
     {
         controller = GetComponent<CharacterController>();
         cam = Camera.main.transform;
+        concealment = GetComponent<PlayerConcealment>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -53,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
+    float SpeedMultiplier => concealment != null ? concealment.SpeedMultiplier : 1f;
+
     void Move()
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
@@ -70,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        controller.Move(direction * moveSpeed * Time.deltaTime);
+        controller.Move(direction * moveSpeed * SpeedMultiplier * Time.deltaTime);
     }
 
     void ApplyGravity()

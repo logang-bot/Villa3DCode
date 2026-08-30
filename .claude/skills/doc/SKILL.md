@@ -1,12 +1,13 @@
 ---
-description: Updates all project docs (project-overview, roadmap, and per-feature docs under features/) to reflect the current state of the codebase after a work session.
+description: Updates all project docs (project-overview, roadmap, mission-design, mission-walkthrough, game-mechanics, and per-feature docs under features/) to reflect the current state of the codebase after a work session.
 ---
 
 Update the project documentation to reflect the current state of the codebase. Follow these steps:
 
-1. Read all files in docs/ (project-overview.md, roadmap.md, and every file under features/)
+1. Read all files in docs/ (project-overview.md, roadmap.md, mission-design.md, mission-walkthrough.md, game-mechanics.md, and every file under features/)
 2. Read all .cs files under Assets/_Project/Scripts/ to check for changes or new scripts
 3. Ask the user: "What changed this session?" if the scope is unclear — do not guess at scene configurations since those can't be read from code
+4. If mission-design.md's Build Order (see below) has any [Done] items not yet reflected in mission-walkthrough.md's ✅/🔜 markers, treat that mismatch as part of this session's changes even if nothing else did — the two docs must stay in sync
 
 Then update the relevant docs:
 
@@ -23,6 +24,19 @@ Then update the relevant docs:
 - Remove entries for deleted scripts
 - Add a "Design Decisions" bullet if a new architectural choice was made for that feature this session
 - Only update the "Scene Wiring" section if the user confirms scene changes; do not infer scene state from scripts alone
+
+**mission-design.md** — only touch this if a mission build-order item was completed or the story/scope changed this session:
+- Mark the completed item `[Done]` in the Build Order list, with a one-sentence summary and a pointer to its new/updated `features/*.md` entry
+- Update the Status line at the bottom to name the next not-yet-done item
+
+**mission-walkthrough.md** — whenever a build-order item lands (this is the doc most likely to go stale, since nothing forces it to update):
+- Flip every step whose "🧩 Needs" item is now satisfied from 🔜 to ✅ — if the item only builds the mechanic (not the actual mission content for that step), use "✅ ... (mechanic done, content pending)" exactly like the sneak-observation precedent, and still list what content item unlocks the rest
+- Update the "Currently Playable" section to describe any new placeholder/test content a player can actually walk up to and try today
+- Update the Cross-Reference table's "Unlocks story steps" done-marker for that build-order item
+
+**game-mechanics.md** — whenever a mechanic (not just mission content) is newly built:
+- Add or extend a section describing what the player can now do, in plain terms, ending with a `→ features/*.md` pointer
+- Remove the corresponding bullet from "What Isn't Built Yet" if one exists there
 
 Rules:
 - Do not add placeholder or speculative content

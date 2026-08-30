@@ -41,10 +41,29 @@ NPCs can hold real branching conversations, authored in Yarn Spinner's `.yarn` s
 - Shows lines one at a time with the speaker's name
 - Presents multiple-choice options when the conversation branches
 - Can change what the NPC says on a later conversation, based on what's already happened (e.g. "I already told you what I saw")
+- Can chain multiple conditions together (e.g. only offering a dialogue option once *two* separate clues both exist)
 
-One placeholder NPC (`NPC_Witness`) exists today, proving this works end-to-end. The actual mission's cast of NPCs (the client, the fiancée, the lover, etc.) hasn't been placed yet — see `mission-walkthrough.md` for what's still to come.
+Two real Act 1 NPCs use this today: the Client (who gives the case and takes the report) and an informant (who gives leads once the case is accepted).
 
 → `features/dialogue-system.md`
+
+---
+
+## Sneak & Observation
+NPCs can watch for the player: a facing-based vision cone, with a continuously rising/decaying awareness meter driving Unaware → Suspicious → Alert. Standing unseen inside an observation zone for long enough grants a clue automatically — no button needed, just staying out of sight. Getting fully spotted (`Alert`) cancels the current attempt; the NPC calms back down on its own as awareness decays, no separate cooldown needed. The player has a crouch toggle (**Left Ctrl**) that meaningfully slows detection (and movement) while active.
+
+Two real suspects use this today: the fiancée and her lover, each with their own watcher and observation point, granting distinct evidence clues.
+
+→ `features/sneak-observation.md`
+
+---
+
+## Combat
+Turn-based, Persona-style: entering a fight (via a trigger in the hub) loads a separate Battle scene. Turn order goes by Speed, fastest first. Each round the player picks Attack, Defend (halves incoming damage until their next turn), or a Skill (stronger attack, costs SP — fails cleanly with no wasted turn if you don't have enough). Enemies just always attack back. Win or lose, the fight ends and you're returned to the hub after a moment.
+
+One real encounter exists today — a "Thief" ambush along the Act 1 investigation route, incidental danger that grants no evidence. Enemies are authored as data, not code, so future fights (including the eventual final boss) are just new enemy stats, not new systems.
+
+→ `features/combat-system.md`
 
 ---
 
@@ -57,14 +76,19 @@ Currently the only visible way to check collected clues is a small always-on deb
 
 ---
 
+## Mission Progression
+The game now knows what to do when it starts — this used to be a real gap (every test object was live simultaneously with no framing). A generic component (`RequiresClue`) hides world content until a specific clue/flag is present, and reacts live the moment it appears, no reload needed. Today only the Client is visible at boot; accepting his case instantly reveals the informant's real leads, both sneak targets, and the thief encounter. The same mechanism is meant to be reused for every future mission's own progression, not just this one.
+
+→ `features/mission-state.md`
+
+---
+
 ## What Isn't Built Yet
 Worth being explicit about, since it's easy to assume more exists than does:
-- **Sneaking / observation mechanic** — how the player is meant to gather evidence on suspects without just talking to them. Not started.
-- **Combat** — no battle scene, no stats, no turn-based system at all yet. The "thief/robber" encounters and the final boss fight both depend on this.
 - **A real journal/evidence UI** — today it's a debug text list, not a designed screen.
 - **Multiple hub zones** — only `Hub_Zone01` exists; no ceremony hall, no additional locations yet.
 - **A proper scene-transition system** — scene loads are instant with no fade; the previous fade system was removed for making the Editor unusable.
-- **NPC roster for the mission** — client, fiancée, lover, and the killer are all still unplaced; only one generic test NPC exists.
+- **The rest of the mission's NPC roster** — the killer/final-boss confrontation isn't placed yet (Act 3, item 6).
 - **NavMesh** — the package is installed but nothing is baked; no AI pathing exists yet.
 - **Any real art, lighting mood, or audio** — deliberately deferred until the mechanics above are proven out (see `mission-design.md`'s Scope Boundaries).
 

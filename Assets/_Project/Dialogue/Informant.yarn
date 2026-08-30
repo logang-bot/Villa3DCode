@@ -1,0 +1,18 @@
+title: Informant_Start
+---
+<<if !has_clue("act1_case_accepted")>>
+    Renata: Flowers for the lady? No? Then I've nothing more for you, detective.
+<<elseif has_clue("lead_informant_tip")>>
+    Renata: I already told you what I saw. Nothing's changed since.
+<<else>>
+    Renata: You're the one asking after her, aren't you? The Client's fiancée.
+    -> Ask what she's seen
+        Renata: She walks the plaza most evenings, always the same bench. And there's a man who waits nearby — not her fiancé, I can tell you that much.
+        <<add_clue "lead_informant_tip">>
+        Renata: Watch them both a while. People show their true face when they think no one's looking.
+    -> Ask about the man
+        Renata: Keeps his distance from her in public. I'd wager that's the point.
+    -> Leave
+        Renata: Go on then, detective.
+<<endif>>
+===

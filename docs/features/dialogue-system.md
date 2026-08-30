@@ -69,7 +69,8 @@ Kept separate from `Scripts/Dialogue/` so content stays data, not code.
     "sourceFiles": ["**/*.yarn"]
   }
   ```
-- `Witness.yarn` — one test node (`Witness_Start`) exercising both `add_clue` and `has_clue`: a branching choice, one branch calls `<<add_clue "witness_saw_stranger">>`, and the node's opening line changes on replay via `<<if has_clue(...)>>`.
+- `Informant.yarn` (renamed from `Witness.yarn` when its NPC was repurposed for Act 1 — see `mission-state.md`) — node `Informant_Start`, exercising `add_clue`/`has_clue` with a three-way branch (brush-off before `act1_case_accepted`, real leads once accepted, "already told you" after `lead_informant_tip` is granted).
+- `Client.yarn` — node `Client_Start`, the Act 1 mission-giver: a four-way `<<if>>/<<elseif>>/<<else>>` chain gating on `act1_complete`, then a conjunction of two evidence clues (`has_clue(...) && has_clue(...)`), then `act1_case_accepted`, then the initial brief. First use of `<<elseif>>` and `&&` in this project's content — both compiled and ran cleanly.
 
 ---
 
@@ -90,16 +91,17 @@ Dialogue System                  ← scaffolded via GameObject → Yarn Spinner 
 ClueTracker                      ← scene-root, DontDestroyOnLoad
 └── ClueTracker
 
-NPC_Witness                      ← placeholder NPC (capsule primitive)
+NPC_Informant (renamed from NPC_Witness)  ← placeholder NPC (capsule primitive), NameLabel "Renata"
 ├── Transform: position (-8, 1, -10) — open plaza pavement, clear of tree colliders and existing zones
 ├── SphereCollider (Is Trigger: ON, Radius: 2.5)
 ├── InteractableZone
 │   ├── Prompt Text: "Press E to talk"
 │   └── On Interact → NpcDialogueTrigger.BeginDialogue
-├── NpcDialogueTrigger
-│   ├── Dialogue Runner → Dialogue System
-│   └── Start Node: "Witness_Start"
-└── NameLabel (world-space TMP, "Witness")
+└── NpcDialogueTrigger
+    ├── Dialogue Runner → Dialogue System
+    └── Start Node: "Informant_Start"
+
+NPC_Client                       ← Act 1's mission-giver, same recipe, see mission-state.md
 
 Canvas                            ← existing scene Canvas
 └── ClueDebugPanel                ← top-left, small always-visible list
@@ -107,6 +109,11 @@ Canvas                            ← existing scene Canvas
     │   └── List Label → ClueListLabel
     └── ClueListLabel (TextMeshProUGUI)
 ```
+
+---
+
+## Gotcha — `LineAdvancer.RequestNextLine()` and MCP testing
+Calling `RequestNextLine()` multiple times in a row *within a single `execute_code` call* only registers as one advance — Unity's Update loop doesn't tick between synchronous calls inside the same C# execution, so rapid repeated requests all land in the same "frame" and only the first is meaningful. Each real advance needs its own `execute_code` round-trip (the round-trip's wall-clock gap is what lets Unity's loop actually run a frame). When testing multi-line dialogue via MCP, expect roughly one line of progress per tool call, not per `RequestNextLine()` call.
 
 ---
 
