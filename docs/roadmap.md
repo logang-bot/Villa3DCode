@@ -7,6 +7,7 @@
 - [x] First hub scene with floor plane and capsule placeholder character
 - [x] Follow camera (Cinemachine — orbital, mouse-controlled)
 - [x] Interactable points of interest (trigger zones + E prompt)
+- [x] Landmark interaction zones seeded (cathedral, government palace, statue) with `onInteract` flavor-text messages
 - [ ] Scene transition system — removed (fade/DontDestroyOnLoad version made the Editor view messy); scenes load instantly for now, cleaner replacement deferred
 - [ ] Replace capsule with actual character model
 - [ ] Multiple hub zones (expand beyond Hub_Zone01)
@@ -32,33 +33,34 @@
 ---
 
 ## Where We Left Off
-Phase 1 navigation is complete, and `Hub_Zone01`'s entire Potosí city site is now built from real models imported from `VillaCity.blend` — all primitive blockout has been retired and the full import is done:
+Phase 1 navigation is complete, `Hub_Zone01`'s entire Potosí city site is built from real imported models, and the interaction system now has its first real gameplay use — three landmark zones with `onInteract` flavor text:
 - WASD moves the capsule camera-relative
 - Mouse orbits the camera around the character independently
 - Walking into a trigger zone shows a prompt; pressing E triggers the action
 - Pressing E on a zone with a `targetScene` loads it instantly via `SceneManager.LoadScene` — the old fade-transition system (`TransitionCanvas`/`SceneTransition.cs`) was removed since its always-opaque overlay made the Editor Scene/Game views unusable while working; a cleaner transition system is deferred to later, see `features/interaction-system.md`
 - All 19 landmark groups (~115 mesh objects) are imported and placed: the plaza, cathedral, government palace ("Moneda"), the secondary LPlaza square + connecting terrace/staircase, the site ground (two terraces), 12 lamp posts with real Point Lights, and 9 surrounding city blocks — see `features/hub-environment.md` and the `hub-zone01-coordinate-mapping` memory for the full layout and the coordinate-mapping gotchas hit along the way
 - Player spawn remains at the plaza's south edge (0, 1, -14), which reads correctly against the real geometry
+- `Zone_Cathedral`, `Zone_GovPalace`, and `Zone_Statue` are seeded at the real landmarks with placeholder flavor-text `interactMessage`s (first real use of the `onInteract` path — `InteractableZone`/`InteractionPromptUI` were extended with `interactMessage`/`ShowMessage` for this); the old `Zone_Entrance` test zone was relocated off the plaza to (0, 0, 25), clear of the new landmark zones — see `features/interaction-system.md`
+- Runtime testing surfaced a real bug found along the way: none of the imported city geometry had colliders, so the player fell through the world everywhere. Fixed by adding non-convex `MeshCollider`s to all 115 imported mesh sub-objects across all 19 landmark groups — see `features/hub-environment.md`
 
-**Next task**: Seed interaction zones at the plaza landmarks (cathedral, government palace, fountain/statue) — first real use of the `onInteract` UnityEvent path.
+**Next task**: Bake a NavMesh over the real city geometry so future NPCs can path the site.
 
 ---
 
 ## Next Steps (in order)
 The full city site is in; remaining art work is texture/material passes and any missing entrance/facing detail (deferred — see `features/hub-environment.md` known limitations). Mechanics work resumes now that the world exists to build them against.
 
-1. **Seed interaction zones at plaza landmarks** — place an `InteractableZone` at each real landmark with placeholder prompt text; first real use of the `onInteract` UnityEvent path (currently only `targetScene` is exercised) — see `features/interaction-system.md`. Also relocate the existing `Zone_Entrance` test zone out of the plaza/statue area.
-2. **Bake a NavMesh** over the real city geometry — `AI Navigation` is installed but unused; bake now so future NPCs can path the site immediately after art
-3. **Multiple hub zones** — create `Hub_Zone02`+ scenes with their own layouts and zone triggers; can reuse the capsule placeholder. Add each new scene to Build Settings so `SceneManager.LoadScene` can find it by name.
-4. **Redesign the scene transition system** — needed once multiple hub zones exist; the removed version's always-opaque overlay made the Editor unusable while working on a single scene, so the replacement should avoid that (e.g. only opaque during an actual transition, not sitting on top of the Editor view by default)
-5. **Dialogue system** — Yarn Spinner or Ink integration for NPC conversations and story clues
-6. **Quest/clue tracking** — data structure to track what the player has discovered
-7. **Combat system** — turn-based battle scene, player/enemy stats, attack/defend/skill actions, win/lose conditions; can prototype with placeholder shapes for enemies
-8. **Replace capsule** — import a gothic-colonial-style 3D character (VRM or FBX); re-attach `PlayerMovement` and `CharacterController` to it (see `features/player-movement.md`)
-9. **NPC placement** — also blocked on having NPC models
-10. **Toon shader tuning**
-11. **Audio** — BGM, SFX, ambient
-12. **Main menu, save system, and UI/UX pass**
+1. **Bake a NavMesh** over the real city geometry — `AI Navigation` is installed but unused; bake now so future NPCs can path the site immediately after art
+2. **Multiple hub zones** — create `Hub_Zone02`+ scenes with their own layouts and zone triggers; can reuse the capsule placeholder. Add each new scene to Build Settings so `SceneManager.LoadScene` can find it by name.
+3. **Redesign the scene transition system** — needed once multiple hub zones exist; the removed version's always-opaque overlay made the Editor unusable while working on a single scene, so the replacement should avoid that (e.g. only opaque during an actual transition, not sitting on top of the Editor view by default)
+4. **Dialogue system** — Yarn Spinner or Ink integration for NPC conversations and story clues
+5. **Quest/clue tracking** — data structure to track what the player has discovered
+6. **Combat system** — turn-based battle scene, player/enemy stats, attack/defend/skill actions, win/lose conditions; can prototype with placeholder shapes for enemies
+7. **Replace capsule** — import a gothic-colonial-style 3D character (VRM or FBX); re-attach `PlayerMovement` and `CharacterController` to it (see `features/player-movement.md`)
+8. **NPC placement** — also blocked on having NPC models
+9. **Toon shader tuning**
+10. **Audio** — BGM, SFX, ambient
+11. **Main menu, save system, and UI/UX pass**
 
 ---
 

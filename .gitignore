@@ -12,6 +12,9 @@
 # Unity asset meta files (keep these)
 !/Assets/**/*.meta
 
+# MCP-for-Unity debug screenshots
+/Assets/Screenshots/
+
 # VS / Rider
 /.vs/
 /.idea/
