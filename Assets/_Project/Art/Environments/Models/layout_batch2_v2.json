@@ -1,0 +1,242 @@
+{
+  "anchor": {
+    "name": "Plaza_Pavement",
+    "footprint_center_xy": [
+      0.0,
+      0.0
+    ],
+    "base_z": 0.0
+  },
+  "note": "v2: recentre is baked into MESH DATA, not object locations. Every exported object node has an identity transform.",
+  "landmarks": [
+    {
+      "name": "LPlaza",
+      "fbx": "LPlaza.fbx",
+      "footprint_center_xy": [
+        -44.85,
+        13.0
+      ],
+      "base_z": -1.0,
+      "size_xyz": [
+        38.3,
+        74.0,
+        6.83
+      ],
+      "objects": [
+        {
+          "name": "LPlaza_Arcade",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -27.0,
+            0.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "LPlaza_Arcade_Floor",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -28.2,
+            0.0
+          ],
+          "base_z": -0.92
+        },
+        {
+          "name": "LPlaza_Arcade_Roof",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -28.2,
+            0.0
+          ],
+          "base_z": 5.39
+        },
+        {
+          "name": "LPlaza_ArchRing",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -37.75,
+            0.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "LPlaza_Benches",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -37.0,
+            0.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "LPlaza_ChainPosts",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            0.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "LPlaza_Grass",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -38.0,
+            0.0
+          ],
+          "base_z": -0.87
+        },
+        {
+          "name": "LPlaza_LongFountain",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -42.0,
+            13.5
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "LPlaza_LongFountain_Water",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -42.0,
+            13.5
+          ],
+          "base_z": -0.68
+        },
+        {
+          "name": "LPlaza_Pavement",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -45.0,
+            13.0
+          ],
+          "base_z": -1.0
+        },
+        {
+          "name": "LPlaza_RedFloor",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -38.0,
+            0.0
+          ],
+          "base_z": -0.887
+        },
+        {
+          "name": "LPlaza_StatuePad",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            0.0
+          ],
+          "base_z": -0.875
+        }
+      ],
+      "facing": "east",
+      "facing_derived_from": "offset from LPlaza_Pavement centre to LPlaza_Arcade centre (18.0, -13.0)"
+    },
+    {
+      "name": "Terrace",
+      "fbx": "Terrace.fbx",
+      "footprint_center_xy": [
+        -24.325,
+        0.0
+      ],
+      "base_z": -1.0,
+      "size_xyz": [
+        4.95,
+        120.0,
+        1.12
+      ],
+      "objects": [
+        {
+          "name": "Terrace_Stairs",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -24.4,
+            -14.0
+          ],
+          "base_z": -1.0
+        },
+        {
+          "name": "Terrace_Wall_N",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -22.15,
+            28.0
+          ],
+          "base_z": -1.0
+        },
+        {
+          "name": "Terrace_Wall_S",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -22.15,
+            -42.0
+          ],
+          "base_z": -1.0
+        }
+      ]
+    }
+  ]
+}

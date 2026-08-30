@@ -1,0 +1,255 @@
+{
+  "anchor": {
+    "name": "Plaza_Pavement",
+    "footprint_center_xy": [
+      0.0,
+      0.0
+    ],
+    "base_z": 0.0
+  },
+  "landmarks": [
+    {
+      "name": "Plaza",
+      "fbx": "Plaza.fbx",
+      "footprint_center_xy": [
+        0.0,
+        0.0
+      ],
+      "base_z": 0.0,
+      "size_xyz": [
+        36.5,
+        36.5,
+        5.3
+      ],
+      "objects": [
+        {
+          "name": "Plaza_Benches",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.0
+        },
+        {
+          "name": "Plaza_CenterPad",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.112
+        },
+        {
+          "name": "Plaza_CheckerDark",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.122
+        },
+        {
+          "name": "Plaza_CheckerLight",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            -0.0
+          ],
+          "base_z": 0.122
+        },
+        {
+          "name": "Plaza_Fountain_Water",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.48
+        },
+        {
+          "name": "Plaza_Fountains",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.1
+        },
+        {
+          "name": "Plaza_Gardens",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.125
+        },
+        {
+          "name": "Plaza_Paths",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.116
+        },
+        {
+          "name": "Plaza_Pavement",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.0
+        },
+        {
+          "name": "Plaza_TreeCanopy",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 1.5
+        },
+        {
+          "name": "Plaza_TreeTrunks",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.1
+        }
+      ]
+    },
+    {
+      "name": "Statue_Central",
+      "fbx": "Statue_Central.fbx",
+      "footprint_center_xy": [
+        0.0,
+        0.0
+      ],
+      "base_z": 0.1,
+      "size_xyz": [
+        3.6,
+        3.6,
+        4.725
+      ],
+      "objects": [
+        {
+          "name": "Statue_Central_Figure",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.041,
+            0.0
+          ],
+          "base_z": 2.2
+        },
+        {
+          "name": "Statue_Central_Pedestal",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            0.0
+          ],
+          "base_z": 0.1
+        }
+      ]
+    },
+    {
+      "name": "CathedralStreet",
+      "fbx": "CathedralStreet.fbx",
+      "footprint_center_xy": [
+        0.0,
+        -22.0
+      ],
+      "base_z": 0.0,
+      "size_xyz": [
+        42.0,
+        9.5,
+        1.03
+      ],
+      "objects": [
+        {
+          "name": "CathedralStreet",
+          "world_location": [
+            -39.0,
+            -4.25,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            -22.0
+          ],
+          "base_z": 0.0
+        },
+        {
+          "name": "CathedralStreet_Benches",
+          "world_location": [
+            -42.0,
+            -5.7,
+            0.0
+          ],
+          "bbox_center_xy": [
+            0.0,
+            -19.495
+          ],
+          "base_z": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InteractableZone : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class InteractableZone : MonoBehaviour
         if (!Keyboard.current.eKey.wasPressedThisFrame) return;
 
         if (!string.IsNullOrEmpty(targetScene))
-            SceneTransition.Load(targetScene);
+            SceneManager.LoadScene(targetScene);
         else
             onInteract.Invoke();
     }

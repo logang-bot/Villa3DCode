@@ -56,7 +56,7 @@ Assets/_Project/
   - `features/player-movement.md`
   - `features/camera.md`
   - `features/interaction-system.md`
-  - `features/scene-transitions.md`
+  - `features/hub-environment.md`
 
 ---
 

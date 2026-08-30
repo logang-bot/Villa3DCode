@@ -15,10 +15,8 @@
 - On trigger enter → calls `InteractionPromptUI.Show(promptText)`
 - On trigger exit → calls `InteractionPromptUI.Hide()`
 - On E press inside zone:
-  - `targetScene` set → `SceneTransition.Load(targetScene)`
+  - `targetScene` set → `SceneManager.LoadScene(targetScene)` (instant, no fade — the previous fade-transition system was removed; a cleaner replacement is deferred, see `roadmap.md`)
   - `targetScene` empty → `onInteract.Invoke()`
-
-> **Do not** wire scene loads via `onInteract` UnityEvent — the object reference breaks after scene reload. Always use `targetScene` for scene loading. See `scene-transitions.md` for why.
 
 ---
 

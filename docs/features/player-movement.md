@@ -22,7 +22,7 @@
 ## Scene Wiring — Hub_Zone01
 ```
 Capsule                          ← placeholder player
-├── Transform: position (0, 1, 0)
+├── Transform: position (0, 1, -14)   ← south edge of the plaza, near Street_South
 ├── Tag: Player
 ├── CharacterController          (default settings)
 └── PlayerMovement

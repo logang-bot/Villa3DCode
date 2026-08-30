@@ -1,0 +1,521 @@
+{
+  "anchor": {
+    "name": "Plaza_Pavement",
+    "footprint_center_xy": [
+      0.0,
+      0.0
+    ],
+    "base_z": 0.0
+  },
+  "unity_import": {
+    "root_rotation_euler_deg": [
+      0,
+      180,
+      0
+    ],
+    "applies_to": "EVERY group exported by this process, not only multi-object ones",
+    "note": "Empirically determined Unity-side. Verified here that Plaza and Statue_Central are geometrically symmetric about their own centres (vertex centroid offset 0.00 and 0.06), so the same 180 yaw is present but invisible on them. Cathedral (7.18) and GovPalace (8.16) are strongly asymmetric and WILL be visibly wrong if not corrected."
+  },
+  "landmarks": [
+    {
+      "name": "Ground",
+      "fbx": "Ground.fbx",
+      "footprint_center_xy": [
+        17.0,
+        -25.0
+      ],
+      "base_z": -1.01,
+      "size_xyz": [
+        206.0,
+        170.0,
+        1.02
+      ],
+      "objects": [
+        {
+          "name": "Ground_Lower",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -54.0,
+            0.0
+          ],
+          "base_z": -1.01
+        },
+        {
+          "name": "Ground_Upper",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            49.0,
+            -25.0
+          ],
+          "base_z": -0.01
+        }
+      ]
+    },
+    {
+      "name": "Lamps",
+      "fbx": "Lamps.fbx",
+      "footprint_center_xy": [
+        -12.985,
+        -2.235
+      ],
+      "base_z": -0.95,
+      "size_xyz": [
+        78.411,
+        46.911,
+        6.03
+      ],
+      "objects": [
+        {
+          "name": "Lamp_Arc_N",
+          "world_location": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "bbox_center_xy": [
+            -29.0,
+            21.0
+          ],
+          "base_z": -0.95
+        },
+        {
+          "name": "Lamp_Arc_S",
+          "world_location": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "bbox_center_xy": [
+            -29.0,
+            -21.0
+          ],
+          "base_z": -0.95
+        },
+        {
+          "name": "Lamp_CathSt_E1",
+          "world_location": [
+            -49.5,
+            -11.7,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -13.5,
+            -25.5
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_CathSt_E2",
+          "world_location": [
+            -86.0,
+            -5.2,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -26.0,
+            -19.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_CathSt_N",
+          "world_location": [
+            -10.5,
+            -3.7,
+            0.0
+          ],
+          "bbox_center_xy": [
+            13.5,
+            -25.5
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_CathSt_W",
+          "world_location": [
+            -22.0,
+            2.8,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -19.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_L_SW",
+          "world_location": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "bbox_center_xy": [
+            -44.0,
+            -20.0
+          ],
+          "base_z": -0.95
+        },
+        {
+          "name": "Lamp_P1_NE",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            17.0,
+            17.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_P1_NW",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -17.0,
+            17.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_P1_SE",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            17.0,
+            -17.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_P1_SW",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -17.0,
+            -17.0
+          ],
+          "base_z": 0.05
+        },
+        {
+          "name": "Lamp_Statue",
+          "world_location": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "bbox_center_xy": [
+            -52.0,
+            12.0
+          ],
+          "base_z": -0.95
+        }
+      ]
+    }
+  ],
+  "lights": [
+    {
+      "name": "Lamp_Arc_N_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -29.0,
+        21.0,
+        3.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -16.015,
+        23.235,
+        4.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_Arc_S_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -29.0,
+        -21.0,
+        3.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -16.015,
+        -18.765,
+        4.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_CathSt_E1_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -13.5,
+        -25.5,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -0.515,
+        -23.265,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_CathSt_E2_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -26.0,
+        -19.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -13.015,
+        -16.765,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_CathSt_N_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        13.5,
+        -25.5,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        26.485,
+        -23.265,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_CathSt_W_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        26.0,
+        -19.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        38.985,
+        -16.765,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_L_SW_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -44.0,
+        -20.0,
+        3.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -31.015,
+        -17.765,
+        4.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_P1_NE_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        17.0,
+        17.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        29.985,
+        19.235,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_P1_NW_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -17.0,
+        17.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -4.015,
+        19.235,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_P1_SE_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        17.0,
+        -17.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        29.985,
+        -14.765,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_P1_SW_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -17.0,
+        -17.0,
+        4.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -4.015,
+        -14.765,
+        5.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    },
+    {
+      "name": "Lamp_Statue_light",
+      "type": "POINT",
+      "world_position_blender_xyz": [
+        -52.0,
+        12.0,
+        3.9
+      ],
+      "position_relative_to_Lamps_root": [
+        -39.015,
+        14.235,
+        4.85
+      ],
+      "color_rgb_0_1": [
+        1.0,
+        0.82,
+        0.5
+      ],
+      "energy_blender_watts": 150.0,
+      "radius_shadow_soft_size": 0.0,
+      "use_shadow": true
+    }
+  ],
+  "_lamps_offset": [
+    -12.985,
+    -2.235,
+    -0.95
+  ],
+  "sun_extra_not_requested": {
+    "name": "Sun",
+    "type": "SUN",
+    "rotation_euler_deg": [
+      50.0,
+      0.0,
+      30.0
+    ],
+    "color_rgb_0_1": [
+      1.0,
+      0.85,
+      0.7
+    ],
+    "energy_blender_irradiance_w_m2": 4.0
+  }
+}

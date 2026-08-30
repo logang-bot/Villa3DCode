@@ -1,0 +1,276 @@
+{
+  "anchor": {
+    "name": "Plaza_Pavement",
+    "footprint_center_xy": [
+      0.0,
+      0.0
+    ],
+    "base_z": 0.0
+  },
+  "unity_import": {
+    "root_rotation_euler_deg": [
+      0,
+      180,
+      0
+    ],
+    "applies_to": "every group from this export process",
+    "note": "Any root-relative coordinate in this file is ALREADY yaw-compensated and can be used as localPosition directly. This batch contains no root-relative fields, so that path is still unexercised."
+  },
+  "landmarks": [
+    {
+      "name": "Building_NorthEast",
+      "fbx": "Building_NorthEast.fbx",
+      "footprint_center_xy": [
+        26.0,
+        40.0
+      ],
+      "base_z": 0.0,
+      "size_xyz": [
+        22.0,
+        22.0,
+        14.82
+      ],
+      "centroid_offset_from_centre": [
+        0.0,
+        0.0
+      ],
+      "objects": [
+        {
+          "name": "Building_NorthEast",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            40.0
+          ],
+          "base_z": 0.12
+        },
+        {
+          "name": "Building_NorthEast_Apron",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            40.0
+          ],
+          "base_z": 0.0
+        },
+        {
+          "name": "Building_NorthEast_Roof",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            40.0
+          ],
+          "base_z": 13.12
+        },
+        {
+          "name": "Facade_NorthEast",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            40.0
+          ],
+          "base_z": 0.12
+        },
+        {
+          "name": "Glass_NorthEast",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            40.0
+          ],
+          "base_z": 0.75
+        }
+      ]
+    },
+    {
+      "name": "Building_SouthMid",
+      "fbx": "Building_SouthMid.fbx",
+      "footprint_center_xy": [
+        26.0,
+        -40.0
+      ],
+      "base_z": 0.0,
+      "size_xyz": [
+        22.0,
+        22.0,
+        13.82
+      ],
+      "centroid_offset_from_centre": [
+        0.0,
+        -0.0
+      ],
+      "objects": [
+        {
+          "name": "Building_SouthMid",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -40.0
+          ],
+          "base_z": 0.12
+        },
+        {
+          "name": "Building_SouthMid_Apron",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -40.0
+          ],
+          "base_z": 0.0
+        },
+        {
+          "name": "Building_SouthMid_Roof",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -40.0
+          ],
+          "base_z": 12.12
+        },
+        {
+          "name": "Facade_SouthMid",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -40.0
+          ],
+          "base_z": 0.12
+        },
+        {
+          "name": "Glass_SouthMid",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            26.0,
+            -40.0
+          ],
+          "base_z": 0.75
+        }
+      ]
+    },
+    {
+      "name": "Building_SouthWest1",
+      "fbx": "Building_SouthWest1.fbx",
+      "footprint_center_xy": [
+        -36.0,
+        -40.0
+      ],
+      "base_z": -1.0,
+      "size_xyz": [
+        22.0,
+        22.0,
+        16.82
+      ],
+      "centroid_offset_from_centre": [
+        -0.0,
+        -0.0
+      ],
+      "objects": [
+        {
+          "name": "Building_SouthWest1",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            -40.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "Building_SouthWest1_Apron",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            -40.0
+          ],
+          "base_z": -1.0
+        },
+        {
+          "name": "Building_SouthWest1_Roof",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            -40.0
+          ],
+          "base_z": 14.12
+        },
+        {
+          "name": "Facade_SouthWest1",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            -40.0
+          ],
+          "base_z": -0.88
+        },
+        {
+          "name": "Glass_SouthWest1",
+          "world_location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox_center_xy": [
+            -36.0,
+            -40.0
+          ],
+          "base_z": -0.25
+        }
+      ]
+    }
+  ]
+}
