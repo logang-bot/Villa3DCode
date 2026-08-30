@@ -8,15 +8,16 @@ The player explores a hub-based map — not open world, not sandbox — with dis
 ---
 
 ## Engine & Stack
-- **Engine**: Unity 6 (6000.0.41f1)
+- **Engine**: Unity 6 (6000.5.1f1)
 - **Render Pipeline**: Universal Render Pipeline (URP)
 - **Language**: C#
 
 ## Installed Packages
 - Cinemachine — camera follow and cutscene transitions
 - Input System — keyboard and gamepad input
-- AI Navigation — NavMesh pathfinding
+- AI Navigation — NavMesh pathfinding (installed, not yet baked)
 - TextMeshPro — UI text for dialogue and menus
+- Yarn Spinner (`dev.yarnspinner.unity`, via OpenUPM) — NPC dialogue and branching conversations
 
 ---
 
@@ -36,6 +37,7 @@ Assets/_Project/
 │   ├── Environments/
 │   └── UI/
 ├── Audio/
+├── Dialogue/       ← .yarn scripts + .yarnproject (content, not code)
 ├── Prefabs/
 ├── Scenes/
 │   ├── Hub/        ← walkable exploration map
@@ -43,7 +45,7 @@ Assets/_Project/
 ├── Scripts/
 │   ├── Player/
 │   ├── Combat/
-│   ├── Dialogue/
+│   ├── Dialogue/   ← ClueTracker, ClueYarnBridge, NpcDialogueTrigger
 │   └── Core/
 └── Settings/
 ```
@@ -51,12 +53,16 @@ Assets/_Project/
 ---
 
 ## Where to Look Next
+- **What the game currently does, in plain terms** → `game-mechanics.md`
+- **The first full mission (story + mechanics build order)** → `mission-design.md`
+- **Full step-by-step mission walkthrough (spoilers, built and planned steps both)** → `mission-walkthrough.md`
 - **Milestone status, current stopping point, and next task** → `roadmap.md`
 - **How each built system works (scripts + scene wiring)** → `features/`:
   - `features/player-movement.md`
   - `features/camera.md`
   - `features/interaction-system.md`
   - `features/hub-environment.md`
+  - `features/dialogue-system.md`
 
 ---
 
@@ -69,6 +75,6 @@ Assets/_Project/
 ---
 
 ## Environment
-- **Unity version**: 6000.0.41f1 (Unity 6)
+- **Unity version**: 6000.5.1f1 (Unity 6)
 - **Render pipeline**: URP (Universal Render Pipeline)
 - **Project path**: `R:\Development\Unity\Villa3DCode`

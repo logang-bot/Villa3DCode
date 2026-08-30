@@ -64,7 +64,7 @@ Every object above has root rotation `(0, 180, 0)` — see the orientation gotch
 
 Player spawn (`Capsule`, at `(0,1,-14)`) sits just inside the real plaza's south edge, facing the statue/fountain — unchanged since the blockout era, still reads correctly against the real geometry.
 
-`Zone_Entrance` (see `interaction-system.md`) was left at its original position `(3, 0, 3)` and now sits inside the real plaza, close to the statue/fountain — expected to be relocated when real landmark zones are seeded (roadmap next step).
+`Zone_Entrance` (see `interaction-system.md`) has since been relocated to `(0, 0, 25)`, off the plaza and clear of the real landmark zones seeded there.
 
 **Known cleanup item**: the old primitive placeholders (`Cathedral_Nave`, `Cathedral_Tower`, `GovPalace` cube) are disabled in the Hierarchy but not deleted — the MCP tooling couldn't resolve them for deletion once inactive. Safe to delete manually in the Editor.
 

@@ -1,0 +1,5 @@
+{
+  "projectFileVersion": 4,
+  "baseLanguage": "en",
+  "sourceFiles": ["**/*.yarn"]
+}
